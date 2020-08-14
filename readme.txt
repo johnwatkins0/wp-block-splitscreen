@@ -8,4 +8,4 @@ Requires PHP:      7.0.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Displays two media files with a splitscreen effect, with an draggable handle to hide and reveal each side.
+Editor block displaying two media files with a splitscreen effect, with an optional draggable handle to show more or less of each side.

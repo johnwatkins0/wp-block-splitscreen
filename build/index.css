@@ -1,11 +1,2 @@
-.splitscreen__panel-row {
-  align-items: flex-start;
-  flex-direction: column; }
-  .splitscreen__panel-row .components-dropdown {
-    margin: 5px 0; }
+.splitscreen-panel-row{align-items:flex-start;flex-direction:column}.splitscreen-panel-row .components-dropdown{margin:5px 0}.wp-block-johnwatkins0-splitscreen img{height:100% !important}
 
-.wp-block-johnwatkins0-splitscreen img {
-  height: 100% !important; }
-
-
-/*# sourceMappingURL=index.css.map*/

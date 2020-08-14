@@ -5,7 +5,6 @@ import { __ } from '@wordpress/i18n';
  * Internal dependencies
  */
 import Edit from './edit';
-import save from './save';
 
 registerBlockType( 'johnwatkins0/splitscreen', {
 	attributes: {
@@ -34,5 +33,16 @@ registerBlockType( 'johnwatkins0/splitscreen', {
 		html: false,
 	},
 	edit: Edit,
-	save,
+	save( { className, attributes } ) {
+		const { height, left, right } = attributes;
+
+		return (
+			<div
+				className={ className }
+				data-left={ JSON.stringify( left ) }
+				data-right={ JSON.stringify( right ) }
+				style={ { height } }
+			/>
+		);
+	},
 } );

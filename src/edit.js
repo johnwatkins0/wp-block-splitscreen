@@ -1,8 +1,3 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
 import { __ } from '@wordpress/i18n';
 import {
 	BlockIcon,
@@ -16,12 +11,6 @@ import { useRef, useEffect, useState } from '@wordpress/element';
 
 import Splitscreen from 'react-draggable-splitscreen';
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import './editor.scss';
 
 export function Image( { alt, height, type, url, width } ) {
@@ -41,17 +30,6 @@ export function Image( { alt, height, type, url, width } ) {
 	}
 }
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @param {Object} [props]           Properties passed from the editor.
- * @param {string} [props.className] Class name generated for the block.
- *
- * @return {WPElement} Element to render.
- */
 export default function Edit( { className, attributes, setAttributes } ) {
 	const { left, right } = attributes;
 
@@ -61,7 +39,7 @@ export default function Edit( { className, attributes, setAttributes } ) {
 
 	/**
 	 * Handles image selection.
-	 * 
+	 *
 	 * @param {Object} media Media object.
 	 * @param {string} side The image's side, left or right.
 	 */
@@ -73,7 +51,7 @@ export default function Edit( { className, attributes, setAttributes } ) {
 			return;
 		}
 
-		if (media.media_details) {
+		if ( media.media_details ) {
 			setAttributes( {
 				[ side ]: {
 					id: media.id,
@@ -128,7 +106,7 @@ export default function Edit( { className, attributes, setAttributes } ) {
 		<>
 			<InspectorControls>
 				<PanelBody title={ __( 'Media items', 'johnwatkins0' ) }>
-					<PanelRow className="splitscreen__panel-row">
+					<PanelRow className="splitscreen-panel-row">
 						<Image { ...left } />
 						<MediaReplaceFlow
 							mediaId={ { id: savedLeft.id } }
@@ -148,7 +126,7 @@ export default function Edit( { className, attributes, setAttributes } ) {
 							/>
 						) }
 					</PanelRow>
-					<PanelRow className="splitscreen__panel-row">
+					<PanelRow className="splitscreen-panel-row">
 						<Image { ...right } />
 						{ right.id && (
 							<MediaReplaceFlow

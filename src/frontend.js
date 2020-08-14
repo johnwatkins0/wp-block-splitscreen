@@ -7,42 +7,42 @@ import { render } from '@wordpress/element';
  *
  * @param {HTMLElement} root Root element
  */
-function renderSplitscreen(root) {
-    let left;
-		let right;
+function renderSplitscreen( root ) {
+	let left;
+	let right;
 
-		try {
-			left = JSON.parse( root.getAttribute( 'data-left' ) );
-			right = JSON.parse( root.getAttribute( 'data-right' ) );
-		} catch ( e ) {
-			return;
-		}
+	try {
+		left = JSON.parse( root.getAttribute( 'data-left' ) );
+		right = JSON.parse( root.getAttribute( 'data-right' ) );
+	} catch ( e ) {
+		return;
+	}
 
-		if ( ! left || ! right ) {
-			return;
-		}
+	if ( ! left || ! right ) {
+		return;
+	}
 
-		render(
-			<Splitscreen
-				leftSide={
-                    <img
-				alt={ left.alt }
-				height={ left.height }
-				width={ left.width }
-				src={ left.url }
-			/>
-                }
-				rightSide={
-                    <img
-				alt={ right.alt }
-				height={ right.height }
-				width={ right.width }
-				src={ right.url }
-			/>
-                 }
-			/>,
-			root
-		);
+	render(
+		<Splitscreen
+			leftSide={
+				<img
+					alt={ left.alt }
+					height={ left.height }
+					width={ left.width }
+					src={ left.url }
+				/>
+			}
+			rightSide={
+				<img
+					alt={ right.alt }
+					height={ right.height }
+					width={ right.width }
+					src={ right.url }
+				/>
+			}
+		/>,
+		root
+	);
 }
 
 domReady( () => {
@@ -50,5 +50,5 @@ domReady( () => {
 		...document.querySelectorAll(
 			'.entry-content .wp-block-johnwatkins0-splitscreen'
 		),
-	].forEach( renderSplitscreen);
+	].forEach( renderSplitscreen );
 } );

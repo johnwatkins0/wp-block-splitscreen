@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Splitscreen
- * Description:     Displays two media files with a splitscreen effect, with an optional draggable handle to show more or less of each side.
+ * Description:     Editor block displaying two media files with a splitscreen effect, with an optional draggable handle to show more or less of each side.
  * Version:         0.1.0
  * Author:          John Watkins
  * License:         GPL-2.0-or-later
@@ -12,10 +12,7 @@
  */
 
 /**
- * Registers all block assets so that they can be enqueued through the block editor
- * in the corresponding context.
- *
- * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/applying-styles-with-stylesheets/
+ * Registers block assets and block type.
  */
 function johnwatkins_0_splitscreen_block_init() {
 	$dir = dirname( __FILE__ );
