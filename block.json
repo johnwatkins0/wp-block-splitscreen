@@ -1,0 +1,14 @@
+{
+	"name": "johnwatkins0/splitscreen",
+	"title": "Splitscreen",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Displays two media files with a splitscreen effect, with an draggable handle to hide and reveal each side.",
+	"textdomain": "johnwatkins0",
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
